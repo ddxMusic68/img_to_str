@@ -1,3 +1,4 @@
+README.md
 pyproject.toml
 src/img_to_str/__init__.py
 src/img_to_str/img_to_str.py
