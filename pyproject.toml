@@ -8,6 +8,7 @@ version = "0.1.0"
 description = "convert an image to a string using opencv"
 authors = [{ name="ddxMusic68"}]
 dependencies = [
+    "importlib==1.0.4",
     "numpy==2.4.2",
     "opencv-python==4.13.0.92",
     "pygame==2.6.1"
