@@ -2,6 +2,7 @@ import cv2 as cv
 import numpy as np
 import pygame as pg
 import os
+from importlib.resources import files
 
 def imgToStr(img:np.ndarray, size:tuple[int]=None, chars:list[str]=None, reverse:bool=None) -> list[str]:
     """takes in numpy arr as img and converts to str using chars (darkest -> brightest)"""
@@ -31,7 +32,8 @@ def showImg(img:np.ndarray, chars:list[str]=None, size:tuple[int]=(100, 100), fo
 
     strIMG = imgToStr(img, size, chars, reverse)
 
-    font = pg.font.Font("monofont.ttf", font_size)
+    monofont = files("img_to_str").joinpath("data/monofont.ttf")
+    font = pg.font.Font(monofont, font_size)
     char_width, char_height = font.render("2", True, (255, 255, 255)).get_size()
 
     screen = pg.display.set_mode((size[1]*char_width, size[0]*char_width))
@@ -59,7 +61,8 @@ def showImg(img:np.ndarray, chars:list[str]=None, size:tuple[int]=(100, 100), fo
 def showVid(capture:cv.VideoCapture, chars:list[str]=None, size:tuple[int]=(100, 100), font_size:int=15, color:tuple[int]=(255, 255, 255), reverse:bool=None):
     pg.init()
 
-    font = pg.font.Font("monofont.ttf", font_size)
+    monofont = files("img_to_str").joinpath("data/monofont.ttf")
+    font = pg.font.Font(monofont, font_size)
     char_width, char_height = font.render("2", True, (255, 255, 255)).get_size()
 
     screen = pg.display.set_mode((size[1]*char_width, size[0]*char_width))
@@ -96,9 +99,9 @@ def imgToFile(img:np.ndarray, filePath:str, spacer:str=" ", size:tuple[int]=None
             f.write('\n')
 
 if __name__ == "__main__":
-    img = cv.imread("bike.jpg")
+    img = cv.imread("profilephoto.jpg")
     capture = cv.VideoCapture(0)
 
-    imgToFile(img, os.path.join(os.curdir, "test.txt"), size=(400, 300), reverse=True)
-    # showVid(capture, size=(80, 80), reverse=True)
+    # imgToFile(img, os.path.join(os.curdir, "test.txt"), size=(400, 300), reverse=True)
+    showVid(capture, size=(80, 80), reverse=True)
     # showImg(img, size=(80, 80), reverse=False)

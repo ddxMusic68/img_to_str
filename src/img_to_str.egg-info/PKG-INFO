@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: img_to_str
+Version: 0.1.0
+Summary: convert an image to a string using opencv
+Author: ddxMusic68
+Requires-Dist: numpy==2.4.2
+Requires-Dist: opencv-python==4.13.0.92
+Requires-Dist: pygame==2.6.1

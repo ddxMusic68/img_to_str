@@ -1,0 +1,8 @@
+pyproject.toml
+src/img_to_str/__init__.py
+src/img_to_str/img_to_str.py
+src/img_to_str.egg-info/PKG-INFO
+src/img_to_str.egg-info/SOURCES.txt
+src/img_to_str.egg-info/dependency_links.txt
+src/img_to_str.egg-info/requires.txt
+src/img_to_str.egg-info/top_level.txt
