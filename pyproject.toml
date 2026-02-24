@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "img_to_str"
+version = "0.1.0"
+description = "convert an image to a string using opencv"
+authors = [{ name="ddxMusic68"}]
+dependencies = [
+    "numpy==2.4.2",
+    "opencv-python==4.13.0.92",
+    "pygame==2.6.1"
+]
